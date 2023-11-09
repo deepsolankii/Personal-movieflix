@@ -17,7 +17,9 @@ const Header = () => {
   };
 
   useEffect(() => {
+    console.log("Header");
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      console.log("reached", user);
       if (user) {
         const { uid, email, displayName } = user;
         dispatch(
@@ -34,7 +36,7 @@ const Header = () => {
       }
     });
 
-    return unsubscribe();
+    return () => unsubscribe();
   }, []);
 
   return (

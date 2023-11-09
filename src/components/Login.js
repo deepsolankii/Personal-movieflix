@@ -63,8 +63,8 @@ const Login = () => {
       )
         .then((userCredential) => {
           // Signed in
-          // const { uid, email, displayName } = userCredential.user;
-          // dispath(addUser({ uid, email, displayName }));
+          const { uid, email, displayName } = userCredential.user;
+          dispath(addUser({ uid, email, displayName }));
           // ...
         })
         .catch((error) => {
